@@ -1,0 +1,192 @@
+*{
+    margin:0px;
+    padding:0px;
+    font-family: calibri;
+    scroll-behavior: smooth;
+    scroll-snap-type:y mandatory;
+}
+
+
+.name_header{
+    font-family: calibri;
+    font-size: 50px;
+    text-align: center;
+    color:white
+}
+
+.info{
+    font-size: 18px;
+    color:white;
+    text-align: center;
+    font-family: calibri;
+}
+
+.header_container{
+    background-color: #000000;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    scroll-snap-align: start;
+    
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    border-bottom: 1px solid black;
+    text-align: center;
+    align-items:center;
+    height:30px;
+    background-color: rgba(255, 255, 255, 0.656);
+    backdrop-filter: blur(10px);
+}
+
+.my_info{
+    border-top:1.6px solid black;
+    scroll-snap-align: start;
+    background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20250109/pngtree-a-misty-blue-toned-mountainous-landscape-with-dense-forests-and-winding-image_16818904.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 10px;
+}
+
+.info_container{
+    padding-top:25px;
+    padding-left:30px;
+    padding-right: 30px;
+    backdrop-filter: blur(5px); 
+    background-color: rgba(240, 255, 255, 0.126);
+}
+
+
+
+.ket_list{
+    margin-left: 30px;
+}
+
+
+.pen_list{
+    margin-left: 30px;
+}
+
+.containerimg{
+    min-width: 500px;
+    display: flex;
+    margin-top: 10px;
+    flex-wrap:wrap;
+}
+
+.imgcont{
+    padding:20px;
+    border: 0.5px solid rgb(255, 255, 255);
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    background-color: rgba(242, 252, 254, 0.688);
+}
+
+.text_logo{
+    text-align: center;
+    justify-content: center;
+    margin-top: 3px;
+    margin-bottom: -5px;
+}
+
+.container{
+    border:1px solid white;
+    margin-top:10px;
+    margin-bottom: 15px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    border-radius: 10px;
+    background-color: rgba(242, 252, 254, 0.688);
+    box-shadow: 5px 3px #2e2e2e39;
+    backdrop-filter: blur(20px);
+}
+
+.instagram{ 
+    text-decoration: none;
+    color:red;
+}
+
+.whatsapp{
+    text-decoration: none;
+    color:rgb(17, 183, 17);
+}
+
+.tablecontainer{
+    padding: 10px 10px 10px 10px;
+    margin-top:10px;
+    width: 500px;
+    background-color: rgba(242, 252, 254, 0.688);
+}
+
+td{
+    border:1px solid black;
+    padding:5px 5px 5px 5px;
+}
+
+.btn_action{
+    text-align: center;
+}
+
+.btn{
+    padding:7px 18px 7px 18px;
+    margin-left:5px;
+    border-radius: 10px 10px;
+    border:1px solid black;
+}
+
+.submit{
+    background-color: white;
+}
+
+.reset{
+    color: white;
+    background-color: rgb(0, 153, 255);
+}
+
+input{
+    padding:12px 6px 12px 10px;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+#labelform {
+    display: inline-block;
+    padding: 5px 8px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    transition: 0.3s;
+    margin: 2px 2px 5px 2px;
+}
+
+input[type="checkbox"]:checked + #labelform {
+    background-color: #007bff;
+    color: white;
+}
+
+.ipt_form{
+    width: 95%;
+    border-radius:5px 5px;
+    border:0px;
+}
+
+.labelutama{
+    padding-left:10px
+}
+
+.headtabel{
+    width:150px;
+}
