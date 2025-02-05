@@ -11,10 +11,12 @@
     font-family: calibri;
     font-size: 50px;
     text-align: center;
-    color:white
+    color:white;
+    animation: fadeIn 1s ease-out forwards;
 }
 
 .info{
+    animation: fadeIn 1s ease-out forwards;
     font-size: 18px;
     color:white;
     text-align: center;
@@ -46,7 +48,7 @@
 .my_info{
     border-top:1.6px solid black;
     scroll-snap-align: start;
-    background-image: url("assets/background_profile.jpg");
+    background-image: url("background_profile.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -86,7 +88,7 @@
     margin-right: 10px;
     margin-bottom: 20px;
     border-radius: 6px;
-    background-color: rgba(242, 252, 254, 0.688);
+    background-color: rgba(192, 206, 209, 0.688);
 }
 
 .text_logo{
@@ -105,9 +107,31 @@
     padding-right: 15px;
     padding-bottom: 15px;
     border-radius: 10px;
-    background-color: rgba(242, 252, 254, 0.688);
+    background-color: rgba(252, 252, 252, 0.6);
     box-shadow: 5px 3px #2e2e2e39;
     backdrop-filter: blur(20px);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.container:nth-child(1){animation-delay: 0.2s;}
+.container:nth-child(2){animation-delay: 0.4s;}
+.container:nth-child(3){animation-delay: 0.6s;}
+.container:nth-child(4){animation-delay: 0.8s;}
+.container:nth-child(5){animation-delay: 1.0s;}
+.container:nth-child(6){animation-delay: 1.2s;}
+
+
+
+.container:hover{
+    transform: scale(1.015);
 }
 
 .instagram{ 
@@ -190,3 +214,31 @@ input[type="checkbox"]:checked + #labelform {
 .headtabel{
     width:150px;
 }
+
+.link_icon{
+    text-decoration: none;
+    color:#3d3d3d;
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
