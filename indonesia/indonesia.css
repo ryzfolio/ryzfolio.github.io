@@ -1,0 +1,476 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    scroll-snap-type:y mandatory;
+}
+
+h1{
+    margin-left:20px;
+    margin-right:20px;
+    margin-bottom: 10px;
+}
+
+.big_bg{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-image: url("https://cdn1-production-images-kly.akamaized.net/M8itRvEdhfDucJW5XTDpVjGAzhA=/800x450/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/4913834/original/021101900_1723206805-WhatsApp_Image_2024-08-09_at_18.47.53.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    scroll-snap-align: start;
+}
+
+.big_bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(5px);  
+    z-index: 1;
+}
+
+
+.indotext{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 100px;
+    color:white;
+}
+
+.motto{
+    font-family: calibri;
+    margin-top:-5px;
+    font-size: 16px;
+    color:antiquewhite;
+}
+
+.container_info {
+    position: relative;
+    z-index: 3;
+}
+
+.page_description{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-image: url("https://awsimages.detik.net.id/community/media/visual/2018/11/10/27a0690d-84f3-4a17-bdf6-cb80a44cf75f.jpeg?w=700&q=90");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    scroll-snap-align: start;
+}
+
+.info_text{
+    color:white;
+    font-family:calibri;
+    margin-left: 100px;
+    margin-right: 100px;;
+    font-size: 18px;
+    margin-top: 10px;;
+}
+
+.indo_text{
+    color:white;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 50px;
+
+}
+
+.page_description::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(5px);
+    z-index: 1;
+}
+
+.container_text {
+    position: relative;
+    z-index: 2
+}
+
+.big_bg, .page_description, .keunikan, .destinasi, .informasi{
+    position: relative;
+}
+
+.keunikan{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-image: url("https://bnp.jambiprov.go.id/wp-content/uploads/2023/02/raja-ampat.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    scroll-snap-align: start;
+}
+
+.keunikan::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.582); 
+    backdrop-filter: blur(5px);
+    z-index: 1;
+}
+
+.container_keunikan {
+    position: relative;
+    z-index: 2
+}
+
+.unik_text{
+    color:white;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 50px;
+}
+.indo_unik{
+    color:white;
+    font-family:calibri;
+    margin-left: 100px;
+    margin-right: 100px;;
+    font-size: 17px;
+    margin-top: 10px;;
+}
+
+.highlight {
+    color: rgb(255, 89, 89);
+    font-weight: bold;
+}
+
+.text_unik{
+    margin-top: 10px;
+    position: relative;
+}
+
+.destinasi{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-image: url("https://thumb.viva.id/vivabanyuwangi/665x374/2024/09/10/66df90316bed7-5-keajaiban-gunung-bromo-lebih-dari-sekadar-matahari-terbit_banyuwangi.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    scroll-snap-align: start;
+}
+
+.destinasi::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.582); 
+    backdrop-filter: blur(5px);
+    z-index: 1;
+}
+
+.container_destinasi{
+    display: flex;
+    overflow: hidden; 
+    margin-top: 35px;
+    margin-left:30px;
+    margin-right: 30px;
+}
+
+.container_destinasi, .unik_text, .text_info, .info_container{
+    position: relative;
+    z-index: 2
+}
+
+.desti_list{
+    display: flex;
+    flex: 0 0 auto;
+    width:fit-content;
+    width: 100%; 
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    transition: transform 1s ease-in-out;
+}
+
+.desti_list::-webkit-scrollbar {
+    display: none;
+  }
+
+.desti{
+    border:0px solid white;
+    padding:15px 15px 15px 15px;
+    width: 300px;
+    border-radius: 20px 20px;
+    background-color: rgba(142, 149, 199, 0.347);
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.foto_dest{
+    aspect-ratio: 16/9;
+    width: 300px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.text_desti, .info_desti{
+    font-family:calibri;
+    color:white;
+}
+
+.text_desti{
+    margin-bottom: 5px;
+}
+
+.informasi{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-image: url("https://thumb.viva.id/vivabanyuwangi/665x374/2024/09/10/66df90316bed7-5-keajaiban-gunung-bromo-lebih-dari-sekadar-matahari-terbit_banyuwangi.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    scroll-snap-align: start;
+}
+
+.informasi::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.582);
+    backdrop-filter: blur(5px);
+    z-index: 1;
+}
+
+.text_info{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 45px;
+    color:white;
+}
+
+.infolist{
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top:10px;
+}
+
+.info{
+    text-align: left;
+    border: 0px solid black;
+    background-color: rgba(202, 230, 255, 0.333);
+    padding:20px 20px 20px 25px;
+    border-radius: 15px 15px;
+    color:white;
+    font-family: calibri;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.info li{
+    margin-left: 15px;
+}
+
+.lokasi1{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-image: url("https://i.pinimg.com/originals/0a/2f/8d/0a2f8dd918db51f6ac977416b1bfb2af.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    scroll-snap-align: start;
+    position: relative;
+}
+
+.lokasi1::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.582); 
+    backdrop-filter: blur(5px);
+    z-index: 1;
+}
+
+.lokasi_container, .form_container {
+    position: relative;
+    z-index: 2;
+}
+
+.lokasi_text, .form_text{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 45px;
+    color:white;
+}
+
+.maps{
+    margin-top: 20px;
+    width: 800px;
+    height: 500px;
+}
+
+.form1{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-image: url("https://awsimages.detik.net.id/community/media/visual/2024/10/11/penampakan-hari-tanpa-bayangan-di-kota-surabaya-pukul-1115-wib-jumat-11102024-5.jpeg?w=1200");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    scroll-snap-align: start;
+    position: relative;
+}
+
+.form1::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.582); 
+    backdrop-filter: blur(5px);
+    z-index: 1;
+}
+
+.kritiksaran{
+    border:0px solid black;
+    background-color: rgba(209, 235, 253, 0.174);
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    width: 400px;
+    padding: 20px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.703);
+    border-radius: 15px;
+    text-align: left;
+}
+
+.kritiksaran label{
+    color:white;
+    font-family: calibri;
+}
+
+.kritiksaran input{
+    border:1px solid rgb(38, 0, 255);
+    border-radius: 5px 5px;
+    padding:10px;
+    margin-bottom:10px;
+    background-color: rgba(196, 216, 249, 0.56);
+    width: 94%;
+    color: rgb(0, 0, 0);
+}
+
+.kritiksaran textarea{
+    border:1px solid rgb(38, 0, 255);
+    border-radius: 5px 5px;
+    padding:10px;
+    margin-bottom:10px;
+    background-color: rgba(196, 216, 249, 0.56);
+    width: 94%;
+    resize: none;
+    color: rgb(0, 0, 0);
+}
+
+.kritiksaran button{
+    border:1px solid grey;
+    padding:10px 20px 10px 20px;
+    width: 100%;
+    border-radius: 10px 10px;
+    background-color: rgb(229, 237, 242);
+}
+
+button:hover{
+    border:1px solid blue;
+    color:blue
+}
+
+input::placeholder{
+    color:rgb(100, 66, 192);
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border: 1px solid #ff0000;
+}
+
+@media (max-width: 1024px) {
+    .indotext{
+        font-size: 80px;
+    }
+    .h1text{
+        font-size: 40px;
+    }
+    .maps{
+        height: 400px;
+        width: 600px;
+    } 
+    .info_desti{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 480px) {
+    .indotext{
+        font-size: 40px;
+    }
+    .h1text{
+        font-size: 25px;
+    }
+    .maps{
+        height: 500px;
+        width: 300px;
+    } 
+    .textrespon{
+        font-size: 15px;
+    }
+
+    .infolist{
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top:10px;
+    }
+
+    .info{
+        margin-top:20px;
+    }
+
+    .kritiksaran{
+        width: 300px;
+    }
+}
