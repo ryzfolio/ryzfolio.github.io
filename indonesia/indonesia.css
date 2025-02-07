@@ -441,6 +441,31 @@ input:focus, textarea:focus {
 }
 
 @media (max-width: 768px) {
+
+    .infolist{
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top:10px;
+    }
+    .info{
+        margin-top:20px;
+        padding:10px 10px 10px 10px;
+    }
+    li{
+        font-size: 14px;
+    }
+
+    .maps{
+        height: 300px;
+        width: 500px;
+    } 
+
+    .text_info{
+        font-size: 30px;
+        margin-bottom: -20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -456,6 +481,8 @@ input:focus, textarea:focus {
     } 
     .textrespon{
         font-size: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     .infolist{
@@ -463,7 +490,7 @@ input:focus, textarea:focus {
         flex-direction: column;
         margin-left: 20px;
         margin-right: 20px;
-        margin-top:10px;
+        margin-top:20px;
     }
 
     .info{
@@ -472,5 +499,171 @@ input:focus, textarea:focus {
 
     .kritiksaran{
         width: 300px;
+    }
+
+    .desti{
+        padding:10px 10px 10px 10px;
+        margin-top:15px;    
+    }
+
+    .desti_list{
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+    }
+
+    .foto_dest{
+        aspect-ratio: 16/9;
+        width: 210px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+    .desti{
+        width: 220px;
+    }
+    .text_desti{
+        font-size: 18px;
+    }
+    
+    .info_desti{
+        font-size: 12px;
+    }
+
+    .desti_head{
+        margin-bottom: -20px;
+        margin-top: 20px;
+    }
+
+    .informasi{
+        height: max-content;
+        padding-top: 20px;
+    }
+
+    .destinasi{
+        height: max-content;
+        padding-top: 10px;
+        padding-bottom: 30px;
+    }
+
+    .isian_header{
+        font-size: 18px;
+    }
+
+    .text_info{
+        margin-top: 10px;
+    }
+    .infolist{
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 380px) {
+    .kritiksaran{
+        width: 200px;
+    }
+
+    .kritiksaran button{
+        width: 100%;
+    }
+    
+    .kritiksaran textarea,.kritiksaran input{
+        width: 90%;
+    }
+
+    .maps{
+        height: 300px;
+        width: 200px;
+    } 
+}
+
+@media (max-width: 300px) {
+    .kritiksaran{
+        width: 170px;
+    }
+
+    .kritiksaran button{
+        width: 100%;
+    }
+    
+    .kritiksaran textarea,.kritiksaran input{
+        width: 90%;
+    }
+
+    .maps{
+        height: 300px;
+        width: 200px;
+    } 
+
+    .foto_dest{
+        aspect-ratio: 16/9;
+        width: 160px;
+        border-radius: 10px;
+        margin-bottom: 7px;
+    }
+    .desti{
+        width: 180px;
+    }
+    .text_desti{
+        font-size: 16px;
+    }
+
+    .responunik{
+        font-size:14px;
+    }
+}
+
+@media (max-width: 280px) {
+    .kritiksaran{
+        width: 130px;
+    }
+
+    .kritiksaran button{
+        width: 100%;
+    }
+    
+    .kritiksaran textarea,.kritiksaran input{
+        width: 90%;
+    }
+
+    .maps{
+        height: 300px;
+        width: 200px;
+    } 
+
+    .foto_dest{
+        aspect-ratio: 16/9;
+        width: 110px;
+        border-radius: 10px;
+        margin-bottom: 7px;
+    }
+    .desti{
+        width: 120px;
+    }
+    .text_desti{
+        font-size: 16px;
+    }
+
+    .responunik{
+        font-size:14px;
+    }
+
+    .keunikan{
+        height: fit-content;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .indotext{
+        font-size: 30px;
+    }
+    .motto{
+        font-size: 14px;
+    }
+    .h1text{
+        font-size: 25px;
+    }
+
+    .text_info{
+        font-size: 18px;
     }
 }
