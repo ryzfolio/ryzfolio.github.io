@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>-- RESTRICTED --</title>
+    <style>
+        *{
+            margin:5px 5px 0px 5px;
+            padding:0;
+        }
+        p{
+            font-family: calibri;
+            font-size:10px;
+            color:red;
+        }
+        h1{
+            color:red;
+        }
+        h1,h2,p,h3{
+            text-align: center;
+            font-family: calibri;
+        }
+        html, body {
+            -webkit-touch-callout: none; /* Blokir long press */
+            -webkit-user-select: none; /* Blokir copy paste */
+            user-select: none;
+        }
+        img {
+            width: 100%;
+            pointer-events: none;
+            -webkit-user-drag: none;
+            object-fit: cover;
+        }
+        #artikel{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="acctest"></h1>
+    <h2 id="infoacc"></h2>
+    <p id="timelog"></p>
+    <h3 id="user"></h3>
+    <h1 id="dsble-fiture"></h1>
+
+    <div class="artikel" id="artikel">
+        <img src="tes.png" alt="" class="foto">
+        <img src="tes.png" alt="" class="foto">
+        <img src="tes.png" alt="" class="foto">
+    </div>
+
+
+    <script src="dsble.js"></script>
+    <script src="waktu.js"></script>
+    <script>
+        if (!/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            alert("Rejected!")
+          window.location.href = "https://www.google.com"; // Ganti dengan halaman yang lo mau
+        }
+      </script>
+      
+    <script type="module">
+        // Import Firebase Modules
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+        import { getDatabase, ref, get, set, update } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js";
+
+        // Konfigurasi Firebase
+        const firebaseConfig = {
+        apiKey: "YOUR_API_KEY",
+        authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+        databaseURL: "https://serverperpus-f1ec7-default-rtdb.firebaseio.com/",
+        projectId: "YOUR_PROJECT_ID",
+        storageBucket: "YOUR_PROJECT_ID.appspot.com",
+        messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+        appId: "YOUR_APP_ID"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        // 🔍 Unik untuk halaman ini (HARUS SAMA dengan yang ada di database)
+        const uniqueCode = "AJSHSE"; // <-- GANTI SESUAI HALAMAN
+        const currentDevice = navigator.userAgent;
+
+        async function checkAccess() {
+            let userName = prompt("Masukkan nama Anda:");
+            if (!userName) return;
+
+            const userRef = ref(database, `users/${userName}`);
+
+            get(userRef).then(async (snapshot) => {
+                if (snapshot.exists()) {
+                    let userData = snapshot.val();
+
+                    // ❌ Cek apakah user cocok dengan halaman ini
+                    if (userData.uniqueCode !== uniqueCode) {
+                        document.getElementById("acctest").innerHTML = "❌ Rejected!";
+                        document.getElementById("infoacc").innerHTML = "Anda tidak diijinkan mengakses halaman ini!";
+                        return;
+                    }
+
+                    let savedDevice = userData.device;
+                    let attemptCount = userData.attemptCount || 0;
+                    let isBlocked = userData.blocked;
+
+                    // ❌ Cek apakah user sudah diblokir
+                    if (isBlocked) {
+                        
+                        document.getElementById("acctest").innerHTML = "❌ Banned User!";
+                        document.getElementById("infoacc").innerHTML = "Akun ditangguhkan!, Anda tidak dapat akses halaman ini lagi!";
+                        return;
+                    }
+
+                    // 🔍 Jika belum ada perangkat, simpan userAgent pertama kali
+                    if (!savedDevice) {
+                        await update(userRef, { device: currentDevice });
+                        alert("✅ Device Success! Logged!");
+                        setTimeout(function() {
+                            document.getElementById("artikel").style.display = "block";
+                        }, 2000);
+                        return;
+                    }
+
+                    // ❌ Cek apakah perangkat sama
+                    if (savedDevice !== currentDevice) {
+                        if (attemptCount < 2) {
+                            alert(`⚠️ ALERT! Anda login menggunakan perangkat berbeda.\nMencoba terus-menerus mengakibatkan ban!, Try: ${2 - attemptCount}`);
+                            document.getElementById("acctest").innerHTML = "❌ Unauthorized Devices!";
+                            document.getElementById("infoacc").innerHTML = "Perangkat Tidak Terdaftar!";
+                            await update(userRef, { attemptCount: attemptCount + 1 });
+                        } else {
+                            alert("❌ BANNED USERS! Akun ditangguhkan.");
+                            await update(userRef, { blocked: true });
+
+                            // 🚫 Simpan perangkat ke daftar blokir
+                            const bannedRef = ref(database, `bannedDevices/${uniqueCode}/${userName}`);
+                            await set(bannedRef, { blocked: true });
+
+                            document.getElementById("acctest").innerHTML = "❌ Banned User!";
+                            document.getElementById("infoacc").innerHTML = "Akun ditangguhkan!, Anda tidak dapat akses halaman ini lagi!";
+                        }
+                        return;
+                    }
+
+                    // ✅ Login sukses
+                    alert(`✅ Logged, ${userName}!`);
+                    setTimeout(function() {
+                            document.getElementById("artikel").style.display = "block";
+                    }, 2000);
+                    document.getElementById("user").innerHTML = "Welcome " +userName+"!";
+                } else {
+                    alert("❌ User tidak ditemukan!");
+                }
+            });
+        }
+
+        // 🔥 Jalankan fungsi saat halaman dibuka
+        checkAccess();
+      </script>
+
+</body>
+</html>
