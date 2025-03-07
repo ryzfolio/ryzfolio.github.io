@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Halo ges</h1>
+    <script>
+                // 1. Visibility Change Trick
+        document.addEventListener("visibilitychange", function () {
+            if (document.hidden) {
+                alert("Ketahuan pencet volume! 🔊");
+            }
+        });
+
+        // 2. Resize Trick (UI bisa berubah kalau volume ditekan)
+        window.addEventListener("resize", function () {
+            alert("Jangan mainin volume, bro! 😂");
+        });
+
+        // 3. Blur Trick (Kalau volume bikin elemen kehilangan fokus)
+        window.addEventListener("blur", function () {
+            alert("Tombol volume ketahuan! 🤭");
+        });
+
+        // 4. Fullscreen Trick (Kalau volume bikin keluar fullscreen)
+        document.documentElement.requestFullscreen().catch(() => {});
+        document.addEventListener("fullscreenchange", function () {
+            alert("Keluar fullscreen? Gara-gara volume nih! 😆");
+        });
+
+        // 5. Device Orientation Trick (Kalau HP goyang dikit pas volume ditekan)
+        window.addEventListener("deviceorientation", function (event) {
+            if (Math.abs(event.gamma) > 0.1 || Math.abs(event.beta) > 0.1) {
+                alert("HP goyang? Pasti tekan volume! 📱");
+            }
+        });
+
+        // 6. MutationObserver (Deteksi elemen overlay volume)
+        const observer = new MutationObserver(() => {
+            alert("Overlay volume terdeteksi! 🎛️");
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
+
+        // 7. Audio Context Trick (Kalau volume bikin audio pause)
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        setInterval(() => {
+            if (audioCtx.state !== "running") {
+                alert("Audio ke-pause? Ketahuan pencet volume! 🔇");
+            }
+        }, 1000);
+
+        // 8. Touch + Blur Combo (Kalau volume bikin elemen kehilangan fokus)
+        document.addEventListener("touchstart", function () {
+            setTimeout(() => {
+                if (document.activeElement === document.body) {
+                    alert("Ketahuan pencet volume! 🎚️");
+                }
+            }, 100);
+        });
+
+        // 9. Gamepad API Trick (Kalau volume dari gamepad/Bluetooth)
+        window.addEventListener("gamepadconnected", function (event) {
+            console.log("Gamepad connected:", event.gamepad);
+        });
+        setInterval(() => {
+            const gamepads = navigator.getGamepads();
+            if (gamepads[0]) {
+                console.log(gamepads[0].buttons);
+                alert("Ketahuan pencet volume dari controller! 🎮");
+            }
+        }, 1000);
+
+    </script>
+</body>
+</html>
