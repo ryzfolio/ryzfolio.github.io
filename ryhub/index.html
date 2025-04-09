@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RyHub – Dunia Serba Digital</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Loader -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <p>Loading RyHub...</p>
+  </div>
+
+  <!-- Main Content -->
+  <div id="mainContent" class="hidden">
+    <header>
+      <div class="logo">RyHub</div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">News</a>
+        <a href="#">Login</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+          <h1>Welcome to <span>RyHub</span></h1>
+          <p>All-in-One Digital Finance — From Simulasi Saham & Crypto to Tagihan Harian!</p>
+      
+          <div class="hero-features">
+            <div class="hero-feature">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#2F80ED" class="bi bi-graph-up" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0zm15 14H2V1h1v12h12v1z"/>
+                <path d="M10 10.5l2.5-2.5L15 11V6h-5l2.5 2.5L10 10.5zm-5.646-3.646l1.793 1.793 2.5-2.5L11 9l-4 4-3.5-3.5 1.354-1.354z"/>
+              </svg>
+              <span>Simulasi Saham & Crypto</span>
+            </div>
+            <div class="hero-feature">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#2F80ED" class="bi bi-credit-card-2-front" viewBox="0 0 16 16">
+                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1H0V4z"/>
+                <path d="M0 7h16v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V7zm3 2a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1H3z"/>
+              </svg>
+              <span>Pembayaran Tagihan</span>
+            </div>
+            <div class="hero-feature">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#2F80ED" class="bi bi-qr-code" viewBox="0 0 16 16">
+                <path d="M2 2h2v2H2V2zM6 2h2v2H6V2zM2 6h2v2H2V6zM6 6h2v2H6V6z"/>
+                <path d="M10 2h4v4h-4V2zM11 3v2h2V3h-2zM10 10h1v1h-1v-1zM12 10h2v1h-2v-1zM11 11h1v1h-1v-1zM13 11h1v1h-1v-1zM14 12h1v1h-1v-1z"/>
+                <path d="M2 10h2v2H2v-2zM6 10h2v2H6v-2zM2 14h2v2H2v-2zM6 14h2v2H6v-2z"/>
+              </svg>
+              <span>Bayar via QRIS</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div id="market-prices" class="market-prices ">
+        <h2 class="head_list">📊 Realtime Market</h2>
+        <div class="container-prices">
+            <div class="stock-container">
+                <p id="aapl">Loading AAPL...</p>
+            </div>
+            <div class="stock-container">
+                <p id="msft">Loading MSFT...</p>
+            </div>
+            
+            <div class="stock-container">
+                <p id="tsla">Loading TSLA...</p>
+            </div>
+
+            <div class="stock-container">
+                <p id="djia">Loading DJIA...</p>
+            </div>
+        </div>
+        </ul>
+        <button onclick="loadAllMarkets()">🔁 Refresh</button>
+      </div> 
+
+    <section class="news uphead">
+      <h2 class="head_list">📰 Berita Keuangan Terkini</h2>
+      <div class="news-list">
+        <div class="news-item">
+          <h4>Pasar Saham Menguat</h4>
+          <p>IHSG naik 1.5% hari ini, investor asing borong saham bluechip.</p>
+        </div>
+        <div class="news-item">
+          <h4>Bitcoin Sentuh $70K</h4>
+          <p>Harga BTC terus naik, para trader mulai profit-taking.</p>
+        </div>
+        <div class="news-item">
+          <h4>Tagihan Digital Meningkat</h4>
+          <p>Pembayaran via QRIS tumbuh 60% di kuartal pertama 2025.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 RyHub. Dunia Serba Digital.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
