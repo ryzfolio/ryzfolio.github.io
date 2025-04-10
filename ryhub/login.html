@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login – RyHub</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="important.css" />
+  <style>
+/* body {
+    background: linear-gradient(-45deg, #56CCF2, #2F80ED, #F8F9FA, #56CCF2);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+  }
+
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  } */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #F8F9FA;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: white;
+      padding: 15px 30px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo {
+      font-weight: bold;
+      color: #2F80ED;
+      font-size: 20px;
+    }
+
+    header nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #ffffff;
+      color: #777;
+      font-size: 14px;
+      border-top: 1px solid #eee;
+    }
+
+    .auth-container {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      width: 100%;
+      max-width: 400px;
+      transition: all 0.3s ease;
+    }
+
+    .auth-container h2 {
+      text-align: center;
+      color: #2F80ED;
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      color: #333;
+      margin-bottom: 8px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #E0E0E0;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    button {
+      background: #2F80ED;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #1e66cc;
+    }
+
+    .toggle-link {
+      margin-top: 15px;
+      text-align: center;
+      color: #2F80ED;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .icon-input {
+      position: relative;
+    }
+
+    .icon-input i {
+      position: absolute;
+      top: 38px;
+      left: 12px;
+      color: #999;
+    }
+
+    .icon-input input {
+      padding-left: 36px;
+    }
+
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+
+
+<body>
+  <div id="particles-js" style="position:fixed; width:100%; height:100%; z-index:-1;"></div>
+
+  <div id="loader">
+    <div class="spinner"></div>
+    <p>Log-in to RyHub...</p>
+  </div>
+
+  <header>
+    <div class="logo">RyHub</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#">Services</a>
+      <a href="#">News</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="auth-container fade-up" id="authBox">
+      <h2 id="formTitle">Login to RyHub</h2>
+    
+      <div class="form-wrapper">
+         <!-- Login Form -->
+        <form id="loginForm">
+          <div class="form-group icon-input">
+            <label for="email">Email</label>
+            <i class="bi bi-envelope-fill"></i>
+            <input type="email" id="email" placeholder="Enter your email" required />
+          </div>
+
+          <div class="form-group icon-input">
+            <label for="password">Password</label>
+            <i class="bi bi-lock-fill"></i>
+            <input type="password" id="password" placeholder="Enter your password" required />
+          </div>
+
+          <button type="submit">Login</button>
+        </form>
+
+        <!-- Register Form -->
+        <form id="registerForm" style="display: none;">
+          <div class="form-group icon-input">
+            <label for="reg-email">Email</label>
+            <i class="bi bi-envelope-fill"></i>
+            <input type="email" id="reg-email" placeholder="Enter your email" required />
+          </div>
+
+          <div class="form-group icon-input">
+            <label for="reg-password">Password</label>
+            <i class="bi bi-lock-fill"></i>
+            <input type="password" id="reg-password" placeholder="Create a password" required />
+          </div>
+
+          <div class="form-group icon-input">
+              <label for="confirm-password">Confirm Password</label>
+              <i class="bi bi-shield-lock-fill"></i>
+              <input type="password" id="confirm-password" placeholder="Confirm your password" required />
+          </div>
+          
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    
+      <div class="toggle-link" onclick="toggleForm()">
+        Don’t have an account? Register here
+      </div>
+    </div>
+  </main>
+  
+  <footer>
+    <p>&copy; 2025 RyHub. Dunia Serba Digital.</p>
+  </footer>
+
+  <script>
+    window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+    const main = document.getElementById("mainContent");
+  
+    setTimeout(() => {
+      loader.style.display = "none";
+      main.style.display = "block";
+    }, 600);
+  });
+  </script>
+  
+  <script>
+    const loginForm = document.getElementById("loginForm");
+    const registerForm = document.getElementById("registerForm");
+    const toggleText = document.querySelector(".toggle-link");
+    const formTitle = document.getElementById("formTitle");
+
+    function toggleForm() {
+      const isLogin = loginForm.style.display !== "none";
+      loginForm.style.display = isLogin ? "none" : "block";
+      registerForm.style.display = isLogin ? "block" : "none";
+      formTitle.textContent = isLogin ? "Register for RyHub" : "Login to RyHub";
+      toggleText.textContent = isLogin
+        ? "Already have an account? Login here"
+        : "Don’t have an account? Register here";
+    }
+  </script>
+  <script src="effect.js"></script>
+  <script src="server.js" type="module"></script>
+</body>
+</html>
