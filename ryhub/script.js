@@ -25,9 +25,9 @@ async function fetchCryptoPrices() {
 fetchCryptoPrices();
   
       
-  // const alphaKey = "YIBDZCNB8VK9UEXU";
-  // const finnhubKey = "cvqurfhr01qp88cnoap0cvqurfhr01qp88cnoapg";
-  // const twelveKey = "018898b76d934090a7f54501ac6784e2";
+  const alphaKey = "YIBDZCNB8VK9UEXU";
+  const finnhubKey = "cvqurfhr01qp88cnoap0cvqurfhr01qp88cnoapg";
+  const twelveKey = "018898b76d934090a7f54501ac6784e2";
   const symbols = ["AAPL", "MSFT", "TSLA", "DJIA"];
 
   function loadAllMarkets() {
