@@ -1,0 +1,251 @@
+/* Reset + Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #d0d0d0;
+  }
+  
+  .head-logo{
+    width: 200px;
+  }
+
+  header div {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #000000;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+  }
+  
+  nav a:hover {
+    color: #8f8f8f;
+  }
+  
+  .hero {
+    position: relative;
+    text-align: center;
+    padding-top: 100px;
+    background-color: #ffffff;
+  }
+
+  .porsche-img{
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
+    margin: auto;
+    border-radius: 10px;
+    z-index: 10;
+    position: relative;
+  }
+  
+  .img-911{
+    width: 500px;
+    filter:invert(88%) brightness(338%) contrast(78%);
+    margin-bottom:-50px;
+    top: 0;
+    left: 0;/* biar kayak watermark */
+    z-index: 0; /* paling belakang */
+  }
+
+  .motto-911{
+    font-family: calibri;
+    margin-bottom:-5px;
+    font-size:20px;
+    margin-top:150px;
+  }
+
+  .info-911{
+    margin-top:-15px;
+    font-size:60px;
+    font-family:"Porsche Next", "Arial Narrow", Arial, "Heiti SC", SimHei, sans-serif;
+  }
+
+  .container-hero{
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(255,255,255), rgb(229, 229, 229));
+    height:300px;
+    margin-bottom:100px;
+  }
+  
+  .spec {
+    padding: 40px 20px;
+    background-color: #fff;
+  }
+  .spec-container {
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel-track img {
+    min-width: 100%;
+    object-fit: fill;
+    border-radius: 12px;
+  }
+
+  .carousel{
+    overflow: hidden;
+    width: 900px; /* bisa diubah sesuai ukuran gambar */
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .spec-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* jarak tombol dan gambar */
+    position: relative;
+    width: fit-content;
+    margin: auto;
+    padding: 20px 60px 20px 60px;
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+    transition: background 0.3s;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .carousel-btn:hover {
+    color: #999999;
+  }
+  
+  .carousel-btn.prev {
+    left: 0;
+  }
+  .carousel-btn.next {
+    right: 0;
+  }
+
+  .tabs {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+    flex-wrap: wrap;
+  }
+  .tab-btn {
+    position: relative;
+    padding: 10px 20px;
+    margin: 5px 5px 5px 5px;
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    color: #000000;
+    font-weight: 600;
+    font-family:"Porsche Next", "Arial Narrow", Arial, "Heiti SC", SimHei, sans-serif;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  .tab-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 2px;
+    background-color: #2F80ED;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+  
+  .tab-btn:hover {
+    color: #2F80ED;
+  }
+  
+  .tab-btn:hover::after {
+    width: 40%;
+  }
+  
+  .tab-btn.active {
+    color: #2F80ED;
+  }
+  
+  .tab-btn.active::after {
+    width: 90%;
+  }
+
+  .tab-content {
+    display: none;
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  }
+  .tab-content.active {
+    display: block;
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+  ul {
+    padding-left: 20px;
+  }
+  li {
+    margin: 8px 0;
+  }
+
+  .head-h2{
+    max-width: 900px;
+    margin: 0 auto 0 auto;
+    margin-bottom: -20px;
+    background: white;
+    font-family:"Porsche Next", "Arial Narrow", Arial, "Heiti SC", SimHei, sans-serif;
+  }
+
+  .head-carousel{
+    font-size:40px;
+    font-weight: 500;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 30px;
+    font-size: 0.85rem;
+    background-color: #ffffff;
+    color: #666;
+  }
+  
