@@ -1,4 +1,4 @@
-/* Reset + Font */
+
 * {
     margin: 0;
     padding: 0;
@@ -66,8 +66,8 @@
     filter:invert(88%) brightness(338%) contrast(78%);
     margin-bottom:-50px;
     top: 0;
-    left: 0;/* biar kayak watermark */
-    z-index: 0; /* paling belakang */
+    left: 0;
+    z-index: 0; 
   }
 
   .motto-911{
@@ -90,7 +90,6 @@
     margin-bottom:100px;
   }
   
-  /* Content Section */
   .content {
     padding: 60px 40px;
     background-color: #ffffff;
@@ -116,7 +115,7 @@
     border: 1px solid #000000;
     padding: 10px 20px;
     text-decoration: none;
-    transition: all 0.3s ease-in-out; /* ini yang bikin smooth */
+    transition: all 0.3s ease-in-out;
     border-radius: 5px 5px;
   }
   
@@ -125,7 +124,7 @@
     color: #000000;
   }
   
-  /* Specifications */
+
   .spec-content {
     background-color: #ffffff;
     padding:10px 0px 10px 40px;
@@ -239,7 +238,7 @@
     filter:invert(88%) brightness(338%) contrast(78%);
     margin-bottom:-50px;
     top: 0;
-    left: 0;/* biar kayak watermark */
+    left: 0;
     z-index: 0;
   }
   
