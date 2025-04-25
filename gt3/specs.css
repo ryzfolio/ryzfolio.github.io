@@ -1,4 +1,4 @@
-/* Reset + Font */
+
 * {
     margin: 0;
     padding: 0;
@@ -66,8 +66,8 @@
     filter:invert(88%) brightness(338%) contrast(78%);
     margin-bottom:-50px;
     top: 0;
-    left: 0;/* biar kayak watermark */
-    z-index: 0; /* paling belakang */
+    left: 0;
+    z-index: 0;
   }
 
   .motto-911{
@@ -111,7 +111,7 @@
 
   .carousel{
     overflow: hidden;
-    width: 900px; /* bisa diubah sesuai ukuran gambar */
+    width: 900px; 
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
   }
@@ -120,7 +120,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px; /* jarak tombol dan gambar */
+    gap: 20px;
     position: relative;
     width: fit-content;
     margin: auto;
