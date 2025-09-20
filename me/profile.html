@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portofolio — Ryan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent: #2F80ED;
+      --accent-2: #56CCF2;
+      --bg: #F8F9FA;
+      --card: #FFFFFF;
+      --text: #111827;
+      --muted: #6b7280;
+      --radius: 12px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;overflow:hidden}
+
+    /* SCROLL SNAP */
+    .snap-container{height:100%;overflow-y:auto;scroll-snap-type:y mandatory;scroll-behavior:smooth;}
+    section{scroll-snap-align:start;}
+
+    .hero{height:100vh;display:flex;align-items:center;justify-content:center;padding:40px;background:linear-gradient(180deg,var(--accent) 0%, var(--accent-2) 100%);color:white;position:relative;overflow:hidden}
+    .hero-inner{max-width:900px;width:100%;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
+    .avatar{width:160px;height:160px;border-radius:999px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.25);border:4px solid rgba(255,255,255,0.15)}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    .name{font-size:2.2rem;font-weight:700;letter-spacing:0.2px}
+    .school{font-size:1.05rem;opacity:0.95}
+    .subtitle{max-width:720px;font-weight:500;opacity:0.95}
+    .scroll-hint{position:absolute;bottom:28px;display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,0.9)}
+    .scroll-hint .arrow{width:28px;height:28px;border:2px solid rgba(255,255,255,0.9);border-left:none;border-top:none;transform:rotate(45deg);margin-top:6px}
+
+    .container{max-width:1000px;margin:40px auto;padding:24px}
+    .card{background:var(--card);border-radius:var(--radius);padding:20px;box-shadow:0 6px 20px rgba(16,24,40,0.06);margin-bottom:28px}
+    h2{margin:0 0 14px 0;font-size:1.25rem}
+    p{color:var(--muted);line-height:1.6}
+
+    .org-list{display:flex;flex-direction:column;gap:8px}
+    .org-item{padding:10px;border-radius:10px;background:linear-gradient(180deg,rgba(47,128,237,0.06), rgba(86,204,242,0.03));font-weight:600;color:var(--text)}
+
+    .projects-grid{display:flex;flex-direction:column;gap:18px}
+    .project{display:flex;flex-direction:column;gap:12px}
+    .project-head{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
+    .project-title{font-weight:700}
+    .project-desc{color:var(--muted);font-size:0.95rem}
+    .project-link a{color:white;text-decoration:none;font-weight:600;padding:5px;margin:auto;background-color:#2F80ED;border-radius: 5px;}
+    .project-link{width:max-content;margin-top:10px;}
+
+    .carousel{position:relative;overflow:hidden;border-radius:10px;width:100%;aspect-ratio:16/9;background:#f3f4f6}
+    .track{display:flex;transition:transform .45s cubic-bezier(.22,.9,.3,1);height:100%}
+    .slide{display:flex;align-items:center;justify-content:center;background:#000;flex: 0 0 100%;}
+    .slide img{width:100%;height:auto;object-fit:cover;display:block;margin:auto;object-position: center center;}
+
+
+    .btn{border:0;background:rgba(0,0,0,0.5);color:white;padding:10px;border-radius:8px;cursor:pointer}
+    .btn:active{transform:translateY(1px)}
+    .carousel .nav-left{position:absolute;left:12px;top:50%;transform:translateY(-50%)}
+    .carousel .nav-right{position:absolute;right:12px;top:50%;transform:translateY(-50%)}
+
+
+    .thumbs{display:flex;gap:8px;margin-top:10px;overflow-x:auto;padding-bottom:6px;padding-left:5px;padding-top: 5px;}
+    .thumbs img{width:120px;height:68px;object-fit:cover;border-radius:8px;cursor:pointer;opacity:0.9}
+    .thumbs img.active{outline:3px solid var(--accent);opacity:1}
+
+    .contact-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .contact-actions a{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;background:var(--accent);color:white;text-decoration:none;font-weight:600}
+    .info-text{text-decoration: none;font-weight: 400;font-size: 0.9rem;}
+
+    @media (min-width:900px){
+      .project{flex-direction:row;gap:24px}
+      .project .left{flex:0 0 56%}
+      .project .right{flex:1}
+      .slide{height:auto}
+    }
+    @media (max-width:520px){
+      .name{font-size:1.6rem}
+      .avatar{width:120px;height:120px}
+      .slide{height:auto}
+      .thumbs img{width:86px;height:54px}
+    }
+
+    .events-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+      gap:20px;
+    }
+
+    .event{
+      background:var(--card);
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:0 4px 14px rgba(0,0,0,0.06);
+      display:flex;
+      flex-direction:column;
+    }
+
+    .event-img img{
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .event-body{
+      padding:14px 16px;
+    }
+
+    .event-title{
+      margin:0 0 6px;
+      font-size:1.1rem;
+      font-weight:600;
+      color:var(--text);
+    }
+
+    .event-desc{
+      margin:0;
+      font-size:0.9rem;
+      color:var(--muted);
+      line-height:1.5;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="snap-container">
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <div class="avatar">
+          <img src="foto.webp" alt="Foto profil">
+        </div>
+        <div class="name">Joseph Edward Sutanto</div>
+        <div class="school">SMA Petra 5 Surabaya</div>
+        <div class="subtitle">Still a beginner, but always pushing limits. Learning never stops!</div>
+      </div>
+      <div class="scroll-hint" aria-hidden="true">
+        <div>Scroll / Swipe</div>
+        <div class="arrow"></div>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="content" id="content">
+      <div class="container">
+
+        <div class="card">
+          <h2>Tentang Saya</h2>
+          <p>Perkenalkan, Saya Joseph Edward Sutanto siswa dari SMA Petra 5, dengan ketertarikan di bidang Teknologi Informasi (IT) dan Visual Jockey (VJ). Saya memiliki pengalaman dalam organisasi seperti PD Team, SCEMA dan beberapa pelayanan gereja, yang telah membekali saya dengan keterampilan dalam kepemimpinan, kerja tim, dan manajemen acara.</p>
+        </div>
+
+        <div class="card">
+          <h2>Pengalaman Saya</h2>
+          <div class="org-list">
+            <div class="org-item">PD Team (Persekutuan Doa Sekolah) <div class="info-text">• Kelas 10 (2023) - Kelas 11 (2024)</div></div>
+            <div class="org-item">SCEMA (SMA Petra Creative Media) <div class="info-text">• Kelas 11 (2024) - Sekarang</div></div>
+            <div class="org-item">Multimedia Gereja (Sekolah Minggu) <div class="info-text">• 2018 - 2021</div></div>
+            <div class="org-item">Multimedia Gereja (Youth) <div class="info-text">• 2022 - Sekarang</div></div>
+            <div class="org-item">Multimedia Gereja (Ibadah Umum) <div class="info-text">• 2025 - Sekarang</div></div> 
+            <div class="org-item">MFJ Gereja (Pemusik Sekolah Minggu) <div class="info-text">• 2023 - 2025</div></div> 
+            <div class="org-item">Produser Lagu Gereja (Editor - MOVE Mt. Olive Voice)<div class="info-text">• 2024 - Sekarang</div></div>  
+          
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Dokumentasi Project</h2>
+          <div class="projects-grid">
+
+            <div class="project">
+              <div class="left">
+                <div class="carousel" data-index="0">
+                  <div class="track">
+                    <div class="slide"><img src="img/project1/1.webp" alt="Project 1"></div>
+                    <div class="slide"><img src="img/project1/2.webp" alt="Project 1"></div>
+                    <div class="slide"><img src="img/project1/3.webp" alt="Project 1"></div>
+                  </div>
+                  <button class="btn nav-left">&#10094;</button>
+                  <button class="btn nav-right">&#10095;</button>
+                </div>
+                <div class="thumbs">
+                  <img src="img/project1/1.webp">
+                  <img src="img/project1/2.webp">
+                  <img src="img/project1/3.webp">
+                </div>
+              </div>
+              <div class="right">
+                <div class="project-head">
+                  <div class="project-title">Project 1 — Random Website</div>
+                  <div class="project-desc">Tugas sekolah dalam pembuatan website berbentuk kelompok, dimana kelompok saya membuat website Porsche, dengan visual website yang mirip</div>
+                  <div class="project-link"><a href="https://ryzfolio.github.io/porsche/home.html">Link View Website</a></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project">
+              <div class="left">
+                <div class="carousel" data-index="1">
+                  <div class="track">
+                    <div class="slide"><img src="img/project2/1.png" alt="Project 2"></div>
+                    <div class="slide"><img src="img/project2/2.png" alt="Project 2"></div>
+                    <div class="slide"><img src="img/project2/3.png" alt="Project 2"></div>
+                  </div>
+                  <button class="btn nav-left">&#10094;</button>
+                  <button class="btn nav-right">&#10095;</button>
+                </div>
+                <div class="thumbs">
+                  <img src="img/project2/1.png">
+                  <img src="img/project2/2.png">
+                  <img src="img/project2/3.png">
+                </div>
+              </div>
+              <div class="right">
+                <div class="project-head">
+                  <div class="project-title">Project 2 — Log Information</div>
+                  <div class="project-desc">Sebuah website yang dapat merekam informasi browser pengguna, mirip dengan iplogger atau grabify. Dimana hasil log akan dikirim ke goole firebase</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project">
+              <div class="left">
+                <div class="carousel" data-index="1">
+                  <div class="track">
+                    <div class="slide"><img src="img/project3/1.png" alt="Project 3"></div>
+                    <div class="slide"><img src="img/project3/2.png" alt="Project 3"></div>
+                    <div class="slide"><img src="img/project3/3.png" alt="Project 3"></div>
+                  </div>
+                  <button class="btn nav-left">&#10094;</button>
+                  <button class="btn nav-right">&#10095;</button>
+                </div>
+                <div class="thumbs">
+                  <img src="img/project3/1.png">
+                  <img src="img/project3/2.png">
+                  <img src="img/project3/3.png">
+                </div>
+              </div>
+              <div class="right">
+                <div class="project-head">
+                  <div class="project-title">Project 3 — Windows Security</div>
+                  <div class="project-desc">Sebuah project berbasis python dan nodejs, yang dihubungkan menggunakan websocket. Dimana Python berfungsi untuk memantau aktivitas komputer dan nodejs untuk mengirimkan perintah ke whatsapp</div>
+                  <div class="project-link"><a href="https://github.com/ryzfolio/windows-sec">Link View Github</a></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project">
+              <div class="left">
+                <div class="carousel" data-index="1">
+                  <div class="track">
+                    <div class="slide"><img src="img/project4/1.png" alt="Project 4"></div>
+                    <div class="slide"><img src="img/project4/2.png" alt="Project 4"></div>
+                  </div>
+                  <button class="btn nav-left">&#10094;</button>
+                  <button class="btn nav-right">&#10095;</button>
+                </div>
+                <div class="thumbs">
+                  <img src="img/project4/1.png">
+                  <img src="img/project4/2.png">
+                </div>
+              </div>
+              <div class="right">
+                <div class="project-head">
+                  <div class="project-title">Project 4 — PDF SlideShow</div>
+                  <div class="project-desc">Dibuat dengan bahasa python, berawal karena masalah ekspor canva ketika dijadikan pptx menjadi berantakan, tetapi ketika pdf tidak bisa di slideshow untuk kebutuhan ibadah sehingga aplikasi ini dibuat agar pdf dapat dislideshow di dislay lain</div>
+                  <div class="project-link"><a href="https://github.com/ryzfolio/pdfshow" target="_blank">Link View Github</a></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project">
+              <div class="left">
+                <div class="carousel" data-index="1">
+                  <div class="track">
+                    <div class="slide"><img src="img/project5/1.png" alt="Project 5"></div>
+                  </div>
+                  <button class="btn nav-left">&#10094;</button>
+                  <button class="btn nav-right">&#10095;</button>
+                </div>
+                <div class="thumbs">
+                  <img src="img/project5/1.png">
+                </div>
+              </div>
+              <div class="right">
+                <div class="project-head">
+                  <div class="project-title">Project 5 — Editor MOVE Mt. Olive Voice</div>
+                  <div class="project-desc">Mendapat kesempatan untuk menjadi editor visual pada perilisan lagu dengan judul "Kabar Sukacita" untuk menyambut bulan natal</div>
+                  <div class="project-link"><a href="https://youtu.be/n38nUDnuw8w?si=Y3uynZh3cNcx7A-W" target="_blank">Official Lyric</a> <a href="https://youtu.be/IlRoNP110Sg?si=gUW2R4uGCh5Sk1QS" target="_blank">Official Video</a></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Handled Events</h2>
+          <div class="events-grid">
+            <div class="event">
+              <div class="event-body">
+                <h3 class="event-title">ASCE - Art Science Charity Event</h3>
+                <p class="event-desc">Acara perayaan dimana mengundang banyak sekolah untuk menampilkan bakat mereka pada ajang pentas seni</p>
+              </div>
+            </div>
+
+            <div class="event">
+              <div class="event-body">
+                <h3 class="event-title">Graduation 2023/2024</h3>
+                <p class="event-desc">Diberi kesempatan dalam mengurus multimedia dalam kelulusan angkatan 2023/2024</p>
+              </div>
+            </div>
+
+            <div class="event">
+              <div class="event-body">
+                <h3 class="event-title">Passover Celebration - Youth</h3>
+                <p class="event-desc">Diberi kesempatan melayani pada ibadah paskah youth dalam PDD Team (Publikasi-Dokumentasi) serta tetap mengurus Multimedia</p>
+              </div>
+            </div>
+
+            <div class="event">
+              <div class="event-body">
+                <h3 class="event-title">Christmast Celebration - Umum</h3>
+                <p class="event-desc">Diberi kesempatan melayani pada ibadah natal umum pada ibadah ke-3 dalam Multimedia Team (Visual)</p>
+              </div>
+            </div>
+
+            <div class="event">
+              <div class="event-body">
+                <h3 class="event-title">Christmast Celebration - Youth</h3>
+                <p class="event-desc">Diberi kesempatan melayani pada ibadah natal youth dalam Multimedia Team (Visual)</p>
+              </div>
+            </div>
+
+            <div class="event">
+              <div class="event-body">
+                <h3 class="event-title">MOVE Mt. Olive Voice - Produser Lagu</h3>
+                <p class="event-desc">Diberi kesempatan menjadi editor visual dan motion lyrics untuk pembuatan lagu baru berjudul "Kabar Sukacita"</p>
+              </div>
+            </div>
+
+            <div class="event">
+              <div class="event-body">
+                <h3 class="event-title">Drama Musikal (Song of Hope) - Youth</h3>
+                <p class="event-desc">Diberi kesempatan melayani pada ibadah special performen drama musikal pada ibadah youth, melayani bidang Visual (Motion Grapich, Visual Background & Motion Lyrics)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="card">
+          <h2>Contact</h2>
+          <p class="project-desc">Silakan hubungi lewat WhatsApp atau Instagram.</p>
+          <div class="contact-actions">
+            <a href="https://wa.me/6281232322106" target="_blank">WhatsApp</a>
+            <a href="https://instagram.com/joseph123777" target="_blank">Instagram</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <script>
+    function makeCarousel(carousel){
+      const track = carousel.querySelector('.track')
+      const slides = Array.from(track.children)
+      const left = carousel.querySelector('.nav-left')
+      const right = carousel.querySelector('.nav-right')
+      const thumbs = carousel.parentElement.querySelectorAll('.thumbs img')
+      let idx = 0
+
+      function update(){
+        track.style.transform = `translateX(${-idx * 100}%)`
+        thumbs.forEach((t,i)=> t.classList.toggle('active', i===idx))
+      }
+
+      left.addEventListener('click', ()=>{ idx = (idx - 1 + slides.length) % slides.length; update() })
+      right.addEventListener('click', ()=>{ idx = (idx + 1) % slides.length; update() })
+      thumbs.forEach((t,i)=> t.addEventListener('click', ()=>{ idx=i; update() }))
+
+      update()
+    }
+
+    document.querySelectorAll('.carousel').forEach(makeCarousel)
+  </script>
+
+</body>
+</html>
