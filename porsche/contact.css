@@ -1,0 +1,145 @@
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+}
+
+.purchase-form {
+    animation: fadeInUp 0.8s ease;
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: auto;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.color-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.color-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.color-option:hover,
+.color-option input:checked + img {
+    border-color: #2F80ED;
+    transform: scale(1.03);
+}
+
+.color-option input {
+    display: none;
+}
+
+.color-option img {
+    aspect-ratio: 16/9;
+    width: 190px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+}
+
+
+.purchase-form {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.purchase-form h2 {
+    font-family:"Porsche Next", "Arial Narrow", Arial, "Heiti SC", SimHei, sans-serif;
+    font-size: 40px;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+}
+
+.purchase-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.purchase-form label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #444;
+}
+
+.purchase-form input,
+.purchase-form select {
+    padding: 1rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.purchase-form button {
+    background-color: #ed2f2f;
+    color: white;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.purchase-form button:hover {
+    background-color: #b81e1e;
+}
+
+#pesan{
+    resize: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    .buy-img {
+        padding: 1rem;
+    }
+
+    .carousel-dealer {
+        gap: 0.5rem;
+    }
+
+    .image-dealer {
+        height: 180px;
+        width: 240px;
+    }
+}
+

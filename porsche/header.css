@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .head-web {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #d0d0d0;
+  }
+  
+  .head-logo{
+    width: 200px;
+  }
+
+  .logo-porsche {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .nav-porsche{
+    margin-left: 20px;
+    text-decoration: none;
+    color: #000000;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+    font-family: 'Helvetica Neue', sans-serif;
+  }
+  
+  .nav-porsche:hover {
+    color: #8f8f8f;
+    text-decoration: none;
+  }
+  
+  .hero {
+    position: relative;
+    text-align: center;
+    padding-top: 100px;
+    background-color: #ffffff;
+  }
+
+  .porsche-img{
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
+    margin: auto;
+    border-radius: 10px;
+    z-index: 10;
+    position: relative;
+  }
+  
+  .img-911{
+    width: 35%;
+    filter:invert(88%) brightness(338%) contrast(78%);
+    margin-bottom:-50px;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+
+  .info-911{
+    margin-top:-15px;
+    font-size:60px;
+    font-family:"Porsche Next", "Arial Narrow", Arial, "Heiti SC", SimHei, sans-serif;
+  }
+
+  .container-hero{
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(255,255,255), rgb(229, 229, 229));
+    height:300px;
+    margin-bottom:100px;
+  }
+  
+  
+  footer {
+    text-align: center;
+    padding: 30px;
+    font-size: 0.85rem;
+    background-color: #ffffff;
+    color: #666;
+  }
